@@ -17,6 +17,8 @@ app.use(
 
 app.use(express.json());
 
+app.use("/", (req, res) => res.send("BACKEND IS RUNNING"));
+
 app.use("/api/projects", ProjectRouter);
 
 connectDB();
