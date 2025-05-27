@@ -8,12 +8,10 @@ import ProjectRouter from "./routes/Project.route.js";
 const app = express();
 
 await connectDB();
+const allowedOrigins = ["https://portfolio-theta-smoky-22.vercel.app"];
 
-app.use(
-  cors({
-    origin: "https://portfolio-theta-smoky-22.vercel.app",
-  })
-);
+app.use(cors({ origin: allowedOrigins[0], credentials: true }));
+
 app.use(express.json());
 
 app.use("/api/projects", ProjectRouter);
