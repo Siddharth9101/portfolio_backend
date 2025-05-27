@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
-import serverless from "serverless-http";
 import cors from "cors";
 import connectDB from "./db.js";
 import ProjectRouter from "./routes/Project.route.js";
@@ -12,7 +11,7 @@ await connectDB();
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: "https://portfolio-theta-smoky-22.vercel.app",
   })
 );
 app.use(express.json());
