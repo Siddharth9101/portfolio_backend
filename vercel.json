@@ -13,14 +13,11 @@
     {
       "src": "/(.*)",
       "dest": "index.js",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "https://portfolio-theta-smoky-22.vercel.app"
-        },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, POST" },
-        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
-      ]
+      "headers": {
+        "Access-Control-Allow-Origin": "https://portfolio-theta-smoky-22.vercel.app",
+        "Access-Control-Allow-Methods": "GET, POST",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
     }
   ]
 }
