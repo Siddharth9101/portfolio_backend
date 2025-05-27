@@ -12,14 +12,15 @@ await connectDB();
 app.use(
   cors({
     origin: "https://portfolio-theta-smoky-22.vercel.app",
+    methods: "GET,POST",
+    allowedHeaders: ["Content-Type"],
   })
 );
 
 app.use(express.json());
-
-app.use("/", (req, res) => res.send("BACKEND IS RUNNING"));
-
 app.use("/api/projects", ProjectRouter);
+
+app.get("/", (req, res) => res.send("BACKEND IS RUNNING"));
 
 connectDB();
 
