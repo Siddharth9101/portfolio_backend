@@ -22,8 +22,4 @@ app.use("/api/projects", ProjectRouter);
 
 app.get("/", (req, res) => res.send("BACKEND IS RUNNING"));
 
-connectDB();
-
-app.listen(8080, () => {
-  console.log("Server is running on port 8080");
-});
+export default app;
