@@ -19,17 +19,8 @@ app.use(express.json());
 
 app.use("/api/projects", ProjectRouter);
 
-let isConnected = false;
+connectDB();
 
-async function setupApp() {
-  if (!isConnected) {
-    await connectDB();
-    isConnected = true;
-  }
-  return serverless(app);
-}
-
-export const handler = async (event, context) => {
-  const handlerFn = await setupApp();
-  return handlerFn(event, context);
-};
+app.listen(8080, () => {
+  console.log("Server is running on port 8080");
+});
